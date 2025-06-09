@@ -3,11 +3,16 @@ cluster:
   kubernetesVersion: v1.31.9+rke2r1
   cloudCredentialSecretName: vultr-creds
 
-nodepool:
-  - name: vultr-nodepool-1
-    quantity: 3
+nodepools:
+  - name: vultr-controlplane
+    quantity: 1
     etcd: true
     controlplane: true
+    worker: false
+  - name: vultr-worker
+    quantity: 2
+    etcd: false
+    controlplane: false
     worker: true
 
 
