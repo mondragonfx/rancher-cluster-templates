@@ -2,9 +2,10 @@ apiVersion: rke-machine-config.cattle.io/v1
 kind: VultrConfig
 metadata:
   name: {{ .Values.cluster.name }}-nodes
-  namespace: fleet-default 
-region: ewr
-plan: vc2-2c-4gb
-osId: 1743 
-sshUser: root
-ipv6: true
+  namespace: fleet-default
+spec:
+  region: {{ .Values.vultr.region }}
+  plan: {{ .Values.vultr.plan }}
+  osId: {{ .Values.vultr.osId }}
+  sshUser: {{ .Values.vultr.sshUser }}
+

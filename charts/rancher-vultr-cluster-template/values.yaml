@@ -14,7 +14,7 @@ nodepool:
 vultr:
   region: ewr
   plan: vc2-1c-2gb
-  osId: 1743
+  osId: "1743"
   sshUser: root
   sshKeyIds: []
   tags: []
