@@ -5,12 +5,12 @@ cluster:
 
 nodepool:
   - name: vultr-controlplane
-    count: 1
+    quantity: 1
     etcd: true
     controlplane: true
     worker: false
   - name: vultr-worker
-    count: 2
+    quantity: 2
     etcd: false
     controlplane: false
     worker: true

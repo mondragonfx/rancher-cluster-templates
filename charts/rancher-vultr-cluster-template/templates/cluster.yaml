@@ -4,21 +4,23 @@ metadata:
   name: {{ .Values.cluster.name }}
   namespace: fleet-default
 spec:
-  {{- if .Values.cloudCredentialSecretName }}
+  {{- if .Values.cluster.cloudCredentialSecretName }}
   cloudCredentialSecretName: {{ .Values.cluster.cloudCredentialSecretName }}
   {{- end }}
-  kubernetesVersion: v1.31.9+rke2r1
+  kubernetesVersion: {{ .Values.cluster.kubernetesVersion }}
   rkeConfig:
     machinePools:
-    - controlPlaneRole: true
-      etcdRole: true
-      workerRole: true
-      quantity: {{ .Values.nodepool.count }}
-      name: {{ .Values.cluster.name }}-nodes
+    {{- range .Values.nodepool }}
+    - name: {{ .name }}
+      controlPlaneRole: {{ .controlplane | default false }}
+      etcdRole: {{ .etcd | default false }}
+      workerRole: {{ .worker | default false }}
+      quantity: {{ .quantity }}
       machineConfigRef:
         kind: VultrConfig
-        name: {{ .Values.cluster.name }}-nodes
+        name: {{ .name }}
       paused: false
-      displayName: {{ .Values.cluster.name }}-nodes
+      displayName: {{ .name }}
+    {{- end }}
     machineGlobalConfig:
       cni: calico
