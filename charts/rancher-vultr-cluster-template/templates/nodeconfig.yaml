@@ -2,8 +2,7 @@ apiVersion: rke-machine-config.cattle.io/v1
 kind: VultrConfig
 metadata:
   name: {{ .Values.cluster.name }}-nodes
-  namespace: fleet-default
-apiKey: ${VULTR_API_KEY}  
+  namespace: fleet-default 
 region: ewr
 plan: vc2-2c-4gb
 osId: 1743 
