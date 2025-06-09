@@ -1,0 +1,23 @@
+apiVersion: provisioning.cattle.io/v1
+kind: Cluster
+metadata:
+  name: {{ .Values.cluster.name }}
+  namespace: fleet-default
+spec:
+  {{- if .Values.cloudCredentialSecretName }}
+  cloudCredentialSecretName: {{ .Values.cluster.cloudCredentialSecretName }}
+  {{- end }}
+  kubernetesVersion: v1.31.9+rke2r1
+  rkeConfig:
+    machinePools:
+      - name: {{ .Values.nodepool.name | default (print .Values.cluster.name "-nodes") }}
+        quantity: {{ .Values.nodepool.count }}
+        machineConfigRef:
+          kind: VultrConfig
+          name: {{ .Values.cluster.name }}-nodes
+        roles:
+          - etcd
+          - controlplane
+          - worker
+    machineGlobalConfig:
+      cni: calico

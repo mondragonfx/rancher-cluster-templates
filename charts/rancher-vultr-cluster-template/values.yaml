@@ -1,0 +1,35 @@
+cluster:
+  name: vultr-rke2-cluster
+  kubernetesVersion: v1.29.3+rke2r1
+  cloudCredentialSecretName: vultr-creds
+
+nodepool:
+  name: pool1
+  count: 1
+  roles:
+    - etcd
+    - controlplane
+    - worker
+
+vultr:
+  region: ewr
+  plan: vc2-1c-2gb
+  osId: 1743
+  sshUser: root
+  sshKeyIds: []
+  tags: []
+  backups: false
+  ddosProtection: false
+  ipv6: false
+  enableVPC: false
+  vpcIds: []
+  firewallGroupId: ""
+  isoId: ""
+  appId: 0
+  imageId: ""
+  ipxeChainUrl: ""
+  startupScriptId: ""
+  snapshotId: ""
+  cloudInitUserData: ""
+  floatingIPv4Id: ""
+  sendActivationEmail: false
