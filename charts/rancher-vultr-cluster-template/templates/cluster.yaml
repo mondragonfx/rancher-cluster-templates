@@ -10,14 +10,15 @@ spec:
   kubernetesVersion: v1.31.9+rke2r1
   rkeConfig:
     machinePools:
-      - name: {{ .Values.nodepool.name | default (print .Values.cluster.name "-nodes") }}
-        quantity: {{ .Values.nodepool.count }}
-        machineConfigRef:
-          kind: VultrConfig
-          name: {{ .Values.cluster.name }}-nodes
-        roles:
-          - etcd
-          - controlplane
-          - worker
+    - controlPlaneRole: true
+      etcdRole: true
+      workerRole: true
+      quantity: {{ .Values.nodepool.quantity }}
+      name: {{ .Values.cluster.name }}-nodes
+      machineConfigRef:
+        kind: VultrConfig
+        name: {{ .Values.cluster.name }}-nodes
+      paused: false
+      displayName: {{ .Values.cluster.name }}-nodes
     machineGlobalConfig:
       cni: calico
