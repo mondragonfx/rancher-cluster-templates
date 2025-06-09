@@ -1,7 +1,7 @@
 cluster:
   name: vultr-rke2-cluster
   kubernetesVersion: v1.31.9+rke2r1
-  cloudCredentialSecretName: vultr-creds
+  #cloudCredentialSecretName: vultr-creds
 
 nodepool:
   - name: vultr-controlplane
