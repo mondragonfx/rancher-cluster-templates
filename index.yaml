@@ -1,0 +1,15 @@
+apiVersion: v1
+entries:
+  rancher-vultr-cluster-template:
+  - annotations:
+      catalog.cattle.io/namespace: fleet-default
+      catalog.cattle.io/type: cluster-template
+    apiVersion: v1
+    created: "2025-06-09T16:15:34.149567198Z"
+    description: RKE2 Cluster template for Vultr
+    digest: 4e9f017168996bd65890ec633869c9248eb6330d35ff5cf444bdcbfe7c468736
+    name: rancher-vultr-cluster-template
+    urls:
+    - https://github.com/mondragonfx/rancher-cluster-templates/releases/download/rancher-vultr-cluster-template-0.0.1/rancher-vultr-cluster-template-0.0.1.tgz
+    version: 0.0.1
+generated: "2025-06-09T16:15:34.149572989Z"
