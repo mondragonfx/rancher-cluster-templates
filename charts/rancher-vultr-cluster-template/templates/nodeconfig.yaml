@@ -3,17 +3,6 @@ kind: VultrConfig
 metadata:
   name: {{ .Values.cluster.name }}-nodes
   namespace: fleet-default
-region: ewr
-plan: {{ .Values.nodepool.size }}
-sshUser: root
-os: 1743
-
-
-apiVersion: rke-machine-config.cattle.io/v1
-kind: VultrConfig
-metadata:
-  name: {{ .Values.cluster.name }}-nodes
-  namespace: fleet-default
 apiKey: ${VULTR_API_KEY}  
 region: ewr
 plan: vc2-2c-4gb
