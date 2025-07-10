@@ -193,6 +193,7 @@ cluster:
         quantity: 1
         labels: {}
         providerConfig:
+          apiKey: ''
           region: ewr
           plan: vc2-1c-2gb
           osId: "1743"
@@ -202,6 +203,7 @@ cluster:
           disableUFW: false
           cloudInitFromFile: true
 
+
       - name: etcd
         etcdRole: true
         controlPlaneRole: false
@@ -209,7 +211,8 @@ cluster:
         quantity: 1
         labels: {}
         providerConfig:
-          region: iad
+          apiKey: ''
+          region: ewr
           plan: vc2-2c-4gb
           osId: "1743"
           sshUser: root
@@ -225,6 +228,7 @@ cluster:
         quantity: 1
         labels: {}
         providerConfig:
+          apiKey: ''
           region: ewr
           plan: vc2-1c-2gb
           osId: "1743"
