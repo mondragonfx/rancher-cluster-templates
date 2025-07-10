@@ -5,3 +5,9 @@ questions:
   required: true
   type: string
   group: "General"
+- variable: cloudCredentialSecretName
+  default:
+  description: "CloudCredentialName for provisioning cluster"
+  label: "CloudCredential Name"
+  type: cloudcredential
+  group: "General"
