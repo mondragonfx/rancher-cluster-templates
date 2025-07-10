@@ -1,13 +1,10 @@
-{{- range .Values.nodepool }}
+{{- range .Values.cluster.rkeConfig.machinePools }}
 apiVersion: rke-machine-config.cattle.io/v1
 kind: VultrConfig
 metadata:
   name: {{ .name }}
   namespace: fleet-default
 spec:
-  region: {{ $.Values.vultr.region }}
-  plan: {{ $.Values.vultr.plan }}
-  osId: {{ $.Values.vultr.osId }}
-  sshUser: {{ $.Values.vultr.sshUser }}
+{{ toYaml .providerConfig | indent 2 }}
 ---
 {{- end }}

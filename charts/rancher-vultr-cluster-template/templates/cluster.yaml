@@ -2,19 +2,16 @@ apiVersion: provisioning.cattle.io/v1
 kind: Cluster
 metadata:
   name: {{ .Values.cluster.name }}
-  namespace: fleet-default
+  namespace: {{ .Values.cluster.namespace }}
 spec:
-  {{- if .Values.cluster.cloudCredentialSecretName }}
-  cloudCredentialSecretName: {{ .Values.cluster.cloudCredentialSecretName }}
-  {{- end }}
   kubernetesVersion: {{ .Values.cluster.kubernetesVersion }}
   rkeConfig:
     machinePools:
-    {{- range .Values.nodepool }}
+    {{- range .Values.cluster.rkeConfig.machinePools }}
     - name: {{ .name }}
-      controlPlaneRole: {{ .controlplane | default false }}
-      etcdRole: {{ .etcd | default false }}
-      workerRole: {{ .worker | default false }}
+      controlPlaneRole: {{ .controlPlaneRole | default false }}
+      etcdRole: {{ .etcdRole | default false }}
+      workerRole: {{ .workerRole | default false }}
       quantity: {{ .quantity }}
       machineConfigRef:
         kind: VultrConfig
@@ -23,4 +20,4 @@ spec:
       displayName: {{ .name }}
     {{- end }}
     machineGlobalConfig:
-      cni: calico
+{{ toYaml .Values.cluster.rkeConfig.machineGlobalConfig | indent 6 }}
