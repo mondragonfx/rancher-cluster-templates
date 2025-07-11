@@ -1,9 +1,6 @@
 cluster:
   name: vultr-test-cluster
   namespace: fleet-default
-  labels: {}
-  annotations: {}
-  cloudCredentialSecretName: {}
   kubernetesVersion: v1.31.9+rke2r1
 
   rkeConfig:
@@ -193,7 +190,7 @@ cluster:
         quantity: 1
         labels: {}
         providerConfig:
-          #apiKey: ''
+          apiKey: ''
           region: ewr
           plan: vc2-1c-2gb
           osId: "1743"
@@ -211,7 +208,7 @@ cluster:
         quantity: 1
         labels: {}
         providerConfig:
-          #apiKey: ''
+          apiKey: ''
           region: ewr
           plan: vc2-2c-4gb
           osId: "1743"
@@ -228,7 +225,7 @@ cluster:
         quantity: 1
         labels: {}
         providerConfig:
-          #apiKey: ''
+          apiKey: ''
           region: ewr
           plan: vc2-1c-2gb
           osId: "1743"

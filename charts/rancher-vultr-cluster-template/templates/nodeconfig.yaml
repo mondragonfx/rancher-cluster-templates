@@ -4,7 +4,6 @@ kind: VultrConfig
 metadata:
   name: {{ .name }}
   namespace: fleet-default
-spec:
-{{ toYaml .providerConfig | indent 2 }}
+{{ toYaml .providerConfig | indent 0 }}
 ---
 {{- end }}
