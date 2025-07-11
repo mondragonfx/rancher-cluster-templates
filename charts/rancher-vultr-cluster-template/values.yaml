@@ -192,9 +192,8 @@ cluster:
         providerConfig:
           apiKey: ''
           region: ewr
-          plan: vc2-1c-2gb
+          vpsPlan: vc2-1c-2gb
           osId: "1743"
-          sshUser: root
           enableVpc: true
           vpcIds: [63692dfd-bea6-4e4e-8bb7-50de31887158]
           disableUfw: true
@@ -210,9 +209,8 @@ cluster:
         providerConfig:
           apiKey: ''
           region: ewr
-          plan: vc2-2c-4gb
+          vpsPlan: vc2-2c-4gb
           osId: "1743"
-          sshUser: root
           enableVpc: true
           vpcIds: [63692dfd-bea6-4e4e-8bb7-50de31887158]
           disableUfw: true
@@ -227,9 +225,8 @@ cluster:
         providerConfig:
           apiKey: ''
           region: ewr
-          plan: vc2-1c-2gb
+          vpsPlan: vc2-1c-2gb
           osId: "1743"
-          sshUser: root
           enableVpc: true
           vpcIds: [63692dfd-bea6-4e4e-8bb7-50de31887158]
           disableUfw: true
