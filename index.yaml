@@ -5,6 +5,18 @@ entries:
       catalog.cattle.io/namespace: fleet-default
       catalog.cattle.io/type: cluster-template
     apiVersion: v1
+    created: "2025-07-11T17:42:10.924670726Z"
+    description: RKE2 Cluster template for Vultr
+    digest: d541209c126763d1c973b0ca26b8a158d0dc39fb2f8625bf8356df3acb15a2c6
+    icon: https://helm-charts.ewr1.vultrobjects.com/icons/vultr.svg
+    name: rancher-vultr-cluster-template
+    urls:
+    - https://github.com/mondragonfx/rancher-cluster-templates/releases/download/rancher-vultr-cluster-template-0.0.2/rancher-vultr-cluster-template-0.0.2.tgz
+    version: 0.0.2
+  - annotations:
+      catalog.cattle.io/namespace: fleet-default
+      catalog.cattle.io/type: cluster-template
+    apiVersion: v1
     created: "2025-06-09T16:15:34.149567198Z"
     description: RKE2 Cluster template for Vultr
     digest: 4e9f017168996bd65890ec633869c9248eb6330d35ff5cf444bdcbfe7c468736
@@ -12,4 +24,4 @@ entries:
     urls:
     - https://github.com/mondragonfx/rancher-cluster-templates/releases/download/rancher-vultr-cluster-template-0.0.1/rancher-vultr-cluster-template-0.0.1.tgz
     version: 0.0.1
-generated: "2025-06-09T16:15:34.149572989Z"
+generated: "2025-07-11T17:42:10.924684662Z"
