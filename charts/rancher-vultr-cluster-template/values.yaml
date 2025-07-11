@@ -3,7 +3,7 @@ cluster:
   namespace: fleet-default
   labels: {}
   annotations: {}
-
+  cloudCredentialSecretName: yourkey
   kubernetesVersion: v1.31.9+rke2r1
 
   rkeConfig:

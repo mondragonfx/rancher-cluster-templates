@@ -4,6 +4,9 @@ metadata:
   name: {{ .Values.cluster.name }}
   namespace: {{ .Values.cluster.namespace }}
 spec:
+{{- if .Values.cluster.cloudCredentialSecretName }}
+  cloudCredentialSecretName: {{ .Values.cluster.cloudCredentialSecretName | quote }}
+{{- end }}
   kubernetesVersion: {{ .Values.cluster.kubernetesVersion }}
   rkeConfig:
     machinePools:

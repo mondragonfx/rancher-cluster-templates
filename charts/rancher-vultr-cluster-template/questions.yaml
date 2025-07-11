@@ -7,7 +7,7 @@ questions:
   group: "General"
 - variable: cloudCredentialSecretName
   default:
-  description: "CloudCredentialName for provisioning cluster"
-  label: "CloudCredential Name"
+  description: "Cloud Credentialfor provisioning cluster"
+  label: "Cloud Credential"
   type: cloudcredential
   group: "General"
