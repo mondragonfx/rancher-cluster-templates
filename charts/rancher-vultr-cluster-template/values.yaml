@@ -197,7 +197,7 @@ cluster:
           sshUser: root
           enableVpc: true
           vpcIds: [63692dfd-bea6-4e4e-8bb7-50de31887158]
-          disableUfw: false
+          disableUfw: true
           cloudInitFromFile: true
 
 
