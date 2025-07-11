@@ -195,9 +195,9 @@ cluster:
           plan: vc2-1c-2gb
           osId: "1743"
           sshUser: root
-          enableVPC: true
+          enableVpc: true
           vpcIds: [63692dfd-bea6-4e4e-8bb7-50de31887158]
-          disableUFW: false
+          disableUfw: false
           cloudInitFromFile: true
 
 
@@ -213,9 +213,9 @@ cluster:
           plan: vc2-2c-4gb
           osId: "1743"
           sshUser: root
-          enableVPC: true
+          enableVpc: true
           vpcIds: [63692dfd-bea6-4e4e-8bb7-50de31887158]
-          disableUFW: true
+          disableUfw: true
           cloudInitFromFile: true
 
       - name: worker
@@ -230,9 +230,9 @@ cluster:
           plan: vc2-1c-2gb
           osId: "1743"
           sshUser: root
-          enableVPC: true
+          enableVpc: true
           vpcIds: [63692dfd-bea6-4e4e-8bb7-50de31887158]
-          disableUFW: true
+          disableUfw: true
           cloudInitFromFile: true
 
     machineSelectorConfig:
