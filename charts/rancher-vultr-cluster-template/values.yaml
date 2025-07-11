@@ -183,7 +183,7 @@ cluster:
       etcd-expose-metrics: false
 
     machinePools:
-      - name: control-plane
+      - name: pool1-controlplane
         etcdRole: false
         controlPlaneRole: true
         workerRole: false
@@ -200,7 +200,7 @@ cluster:
           cloudInitFromFile: true
 
 
-      - name: etcd
+      - name: pool2-etcd
         etcdRole: true
         controlPlaneRole: false
         workerRole: false
@@ -216,7 +216,7 @@ cluster:
           disableUfw: true
           cloudInitFromFile: true
 
-      - name: worker
+      - name: pool3-worker
         etcdRole: false
         controlPlaneRole: false
         workerRole: true
